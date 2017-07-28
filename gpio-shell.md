@@ -34,10 +34,9 @@ specifies the GPIO pins exported by Linux kernel for different CE boards. For ma
 consult the board documentation availabe in [Products page](http://www.96boards.org/products/ce/)
 
 > **DragonBoard410c:** 36, 12, 13, 69, 115, 4, 24, 25, 35, 34, 28, 33  
-> **HiKey620:** 488, 489, 490, 491, 492, 415, 463, 495, 426, 433, 427, 434  
-> **Bubblegum:** 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 155, 154 
 
 After exporting GPIO, move into that gpio directory
+GPIO36 is pin 23 on the low speed expansion header
 ```shell
 # cd gpio36
 ```
@@ -47,19 +46,26 @@ Following command returns the direction of GPIO
 # cat direction
 ```
 
-Following command sets the direction of GPIO
+Following command sets the direction of GPIO as input
 ```shell
-# echo [out or in] > direction
+# echo in > direction
 ```
 
 Following command returns 0 if the pin is off, 1 if the pin is on
 ```shell
 # cat value
 ```
-
-Following command sets value of GPIO
+Following command sets the direction of GPIO as output
 ```shell
-# echo [0 or 1] > value
+# echo out > direction
+```
+Once the GPIO is set as output, following command sets value of GPIO as high.
+```shell
+# echo 1 > value
+```
+Following command sets value of GPIO as low.
+```shell
+# echo 0 > value
 ```
 
 Using a multimeter set to measuring voltage, you can probe the pin you are toggleing along with one of the ground nodes (Pins 1,2,39, and 40), to watch the voltage switch between ~1.8V and 0V.
