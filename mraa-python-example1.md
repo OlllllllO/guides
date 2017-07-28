@@ -10,6 +10,7 @@ This guide will help you execute a simple python code using libmraa.
 2. [Grove Sensors Mezzanine](http://www.96boards.org/product/sensors-mezzanine/)
 3. [LED](https://www.seeedstudio.com/Grove-LED-p-767.html)
 4. [Grove Universal 4 Pin Cable](https://www.seeedstudio.com/Grove---Universal-4-Pin-20cm-Unbuckled-Cable-%285-PCs-Pack%29-p-749.html)
+5. [Grove Touch Sensor Module](https://www.seeedstudio.com/Grove-Touch-Sensor-p-747.html)
 
 ### Hardware Connections:
 
