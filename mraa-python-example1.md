@@ -57,6 +57,7 @@ $ sudo python blink-io8.py
 Congratulations! You have executed your first python code using libmraa.
 
 Now that you have tried blinking the LED, lets tie it to an input and blink it using the touch sensor.
+
 Create a new file named touch_blink.py, and copy the below code into the file.
 
 ```
