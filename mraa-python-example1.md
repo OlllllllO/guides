@@ -25,8 +25,13 @@ If you wish to use the Linux Desktop, connect a mouse and a keyboard on the USB 
 
 ### Downloading and installing libmraa (if you don't already have it)
 
-> NOTE: If you already have libmraa, or if you are unsure, you should run this command to guarantee it's avilability on your DragonBoard 410c
+> NOTE: If you are using a DragonBoard 410c with [Debian OS from Linaro](http://www.96boards.org/documentation/ConsumerEdition/DragonBoard-410c/Downloads/Debian.md), you already have libmraa.
 
+If you get the following error, 
+```
+ImportError: No Module named 'mraa'
+```
+or if you are unsure, you should run the following commands to make sure you have the correct gpio library.
 ```
 $ git clone https://github.com/intel-iot-devkit/mraa
 $ cd mraa
@@ -86,4 +91,9 @@ $ sudo python touch_blink.py
 ```
 Congratulations! You have used both inputs and outputs using python code and libmraa gpio library.
 
+To try out more projects with GPIO's clone the projects repository with:
+```	
+$ git clone https://github.com/96boards/projects.git
+```
+Reference : [96Boards projects repository](https://github.com/96boards/projects)
 
