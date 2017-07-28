@@ -19,6 +19,7 @@ This guide will help you execute a simple python code using libmraa.
 3. If you wish to use the serial console from your host machine, connect USB cable to host machine and microUSB on mezzanine board (USB Type-A end of cable connects to host machine, microUSB end of cable connects to microUSB port on Mezzanine.
 If you wish to use the Linux Desktop, connect a mouse and a keyboard on the USB ports available on the DragonBoard. USe the HDMI port to connect your device to a monitor. 
 4. Attach the LED to GPIO 23.
+5. Attach the Grove Touch Sensor Module to Grove connector G3 on the Sensors Mezzanine.
 
 ## Step 2: Software Setup:
 
@@ -53,5 +54,35 @@ Now, execute the code
 ```
 $ sudo python blink-io8.py
 ```
-
 Congratulations! You have executed your first python code using libmraa.
+
+Now that you have tried blinking the LED, lets tie it to an input and blink it using the touch sensor.
+Create a new file named touch_blink.py, and copy the below code into the file.
+
+```
+import mraa
+print (mraa.getVersion())
+
+led = mraa.Gpio(23)
+led.dir(mraa.DIR_OUT)
+led.write(0)
+
+touch = mraa.Gpio(29)
+touch.dir(mraa.DIR_IN)
+
+
+while True:
+	touchButton = int(touch.read())
+	if(touchButton == 1):
+		led.write(1)
+	else:
+		led.write(0)
+
+```
+Now, execute the code
+```
+$ sudo python touch_blink.py
+```
+Congratulations! You have used both inputs and outputs using python code and libmraa gpio library.
+
+
